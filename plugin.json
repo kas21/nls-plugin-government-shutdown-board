@@ -1,0 +1,24 @@
+{
+  "name": "government_shutdown_board",
+  "version": "2025.11.01-beta",
+  "description": "Government Shutdown Board displays elapsed time since October 1, 2025",
+  "author": "kas",
+  "enabled": true,
+
+  "boards": [
+    {
+      "id": "government_shutdown_board",
+      "class_name": "GovernmentShutdownBoard",
+      "module": "board"
+    }
+  ],
+
+  "requirements": {
+    "app_version": ">=2025.10.01",
+    "python_dependencies": ["pillow"]
+  },
+
+  "preserve_files": [
+    "config.json"
+  ]
+}

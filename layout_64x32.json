@@ -1,0 +1,57 @@
+{
+  "_default": {
+    "position": [0,0],
+    "align": "left"
+  },
+  "government_shutdown": {
+    "title_text": {
+      "position":["50%", 1],
+      "align": "center",
+      "font": "_default"
+    },
+    "days_value": {
+      "position":[2, 10],
+      "align": "left",
+      "font": "large"
+    },
+    "days_label": {
+      "position":[2, 22],
+      "align": "left",
+      "font": "_default"
+    },
+    "hours_value": {
+      "position":[18, 10],
+      "align": "left",
+      "font": "large"
+    },
+    "hours_label": {
+      "position":[18, 22],
+      "align": "left",
+      "font": "_default"
+    },
+    "minutes_value": {
+      "position":[35, 10],
+      "align": "left",
+      "font": "large"
+    },
+    "minutes_label": {
+      "position":[35, 22],
+      "align": "left",
+      "font": "_default"
+    },
+    "seconds_value": {
+      "position":[51, 10],
+      "align": "left",
+      "font": "large"
+    },
+    "seconds_label": {
+      "position":[51, 22],
+      "align": "left",
+      "font": "_default"
+    },
+    "gradient": {
+      "position":[0, 0],
+      "align": "left"
+    }
+  }
+}
