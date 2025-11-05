@@ -7,47 +7,52 @@
     "title_text": {
       "position":["50%", 2],
       "align": "center",
-      "font": "large"
+      "font": "wx_small"
+    },
+    "title_text_2": {
+      "position":["50%", 10],
+      "align": "center",
+      "font": "wx_small"
     },
     "days_value": {
-      "position":[5, 25],
+      "position":[4, 20],
       "align": "left",
-      "font": "large"
+      "font": "medium_2"
     },
     "days_label": {
-      "position":[5, 45],
+      "position":[4, 37],
       "align": "left",
-      "font": "_default"
+      "font": "medium_2"
     },
     "hours_value": {
-      "position":[35, 25],
+      "position":[42, 20],
       "align": "left",
-      "font": "large"
+      "font": "medium_2"
     },
     "hours_label": {
-      "position":[35, 45],
+      "position":[42, 37],
       "align": "left",
-      "font": "_default"
+      "font": "medium_2"
     },
     "minutes_value": {
-      "position":[65, 25],
+      "position":[72, 20],
       "align": "left",
-      "font": "large"
+      "font": "medium_2"
     },
     "minutes_label": {
-      "position":[65, 45],
+      "position":[72, 37],
       "align": "left",
-      "font": "_default"
+      "font": "medium_2"
     },
     "seconds_value": {
-      "position":[95, 25],
+      "position":[100, 20],
       "align": "left",
-      "font": "large"
+      "font": "medium_2"
     },
     "seconds_label": {
-      "position":[95, 45],
+      "position":[100, 37],
       "align": "left",
-      "font": "_default"
+      "font": "medium_2"
     },
     "gradient": {
       "position":[0, 0],

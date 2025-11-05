@@ -75,42 +75,49 @@ class GovernmentShutdownBoard(BoardBase):
     def render(self):
         debug.info("Rendering Government Shutdown Board")
 
-        self.matrix.clear()
-
         layout = self.get_board_layout("government_shutdown")
 
         # Load gradient background
         black_gradient = Image.open(f'assets/images/{self.cols}x{self.rows}_scoreboard_center_gradient.png')
 
-        # Calculate elapsed time
-        current_time = datetime.now()
-        days, hours, minutes, seconds = _calculate_elapsed_time(self.shutdown_start, current_time)
-
         # Convert colors to RGB
         fg_rgb = _hex_to_rgb(self.fg_color)
         title_rgb = _hex_to_rgb(self.title_color)
 
-        # Draw gradient background
-        self.matrix.draw_image_layout(layout.gradient, black_gradient)
+        # Track elapsed seconds for display duration
+        elapsed_seconds = 0
 
-        # Draw title
-        self.matrix.draw_text_layout(layout.title_text, "SHUTDOWN", fillColor=title_rgb)
+        # Loop for the configured display duration, updating every second
+        while elapsed_seconds < self.display_seconds:
+            self.matrix.clear()
 
-        # Draw elapsed time components
-        self.matrix.draw_text_layout(layout.days_value, str(days), fillColor=fg_rgb)
-        self.matrix.draw_text_layout(layout.days_label, "DAYS", fillColor=title_rgb)
+            # Calculate current elapsed time
+            current_time = datetime.now()
+            days, hours, minutes, seconds = _calculate_elapsed_time(self.shutdown_start, current_time)
 
-        self.matrix.draw_text_layout(layout.hours_value, str(hours), fillColor=fg_rgb)
-        self.matrix.draw_text_layout(layout.hours_label, "HRS", fillColor=title_rgb)
+            # Draw gradient background
+            self.matrix.draw_image_layout(layout.gradient, black_gradient)
 
-        self.matrix.draw_text_layout(layout.minutes_value, str(minutes), fillColor=fg_rgb)
-        self.matrix.draw_text_layout(layout.minutes_label, "MIN", fillColor=title_rgb)
+            # Draw title
+            self.matrix.draw_text_layout(layout.title_text, "GOVERNMENT", fillColor=title_rgb)
+            self.matrix.draw_text_layout(layout.title_text_2, "SHUTDOWN", fillColor=title_rgb)
 
-        self.matrix.draw_text_layout(layout.seconds_value, str(seconds), fillColor=fg_rgb)
-        self.matrix.draw_text_layout(layout.seconds_label, "SEC", fillColor=title_rgb)
+            # Draw elapsed time components
+            self.matrix.draw_text_layout(layout.days_value, str(days), fillColor=fg_rgb)
+            self.matrix.draw_text_layout(layout.days_label, "DAYS", fillColor=title_rgb)
 
-        # Render to screen
-        self.matrix.render()
+            self.matrix.draw_text_layout(layout.hours_value, str(hours), fillColor=fg_rgb)
+            self.matrix.draw_text_layout(layout.hours_label, "HRS", fillColor=title_rgb)
 
-        # Update every second to keep seconds counter accurate
-        self.sleepEvent.wait(1)
+            self.matrix.draw_text_layout(layout.minutes_value, str(minutes), fillColor=fg_rgb)
+            self.matrix.draw_text_layout(layout.minutes_label, "MIN", fillColor=title_rgb)
+
+            self.matrix.draw_text_layout(layout.seconds_value, str(seconds), fillColor=fg_rgb)
+            self.matrix.draw_text_layout(layout.seconds_label, "SEC", fillColor=title_rgb)
+
+            # Render to screen
+            self.matrix.render()
+
+            # Update every second to keep seconds counter accurate
+            self.sleepEvent.wait(1)
+            elapsed_seconds += 1
