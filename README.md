@@ -4,6 +4,10 @@ A **Government Shutdown Board** for the [NHL LED Scoreboard](https://github.com/
 
 The board shows days, hours, minutes, and seconds that have elapsed since the shutdown began, updating every second.
 
+![Government Shutdown Screenshot 128x64](assets/images/government_shutdown_128.png)
+
+<a href="https://www.buymeacoffee.com/kas21" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Table of Contents
 
 - [Features](#features)
@@ -92,28 +96,8 @@ nano config.json
 1. The board calculates elapsed time from October 1, 2025 at 12:01 AM to the current time
 2. Time is broken down into days, hours, minutes, and seconds
 3. The display shows:
-   - "SHUTDOWN" title at the top
+   - "GOVERNMENT SHUTDOWN" title at the top
    - Four columns displaying: DAYS, HRS, MIN, SEC
    - Each column shows the numeric value with its label
 4. The board updates every second to keep the seconds counter accurate
 5. Display loops continuously while in the active state
-
-### Example Display
-
-```
-      SHUTDOWN
-  35  12  45  23
- DAYS HRS MIN SEC
-```
-
-Where:
-- 35 days have elapsed
-- Plus 12 hours
-- Plus 45 minutes
-- Plus 23 seconds
-
----
-
-## License
-
-This plugin follows the same license as the NHL LED Scoreboard project.

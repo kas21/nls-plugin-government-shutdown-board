@@ -1,6 +1,6 @@
 {
   "name": "government_shutdown_board",
-  "version": "2025.11.01-beta",
+  "version": "2025.11.01",
   "description": "Government Shutdown Board displays elapsed time since October 1, 2025",
   "author": "kas",
   "enabled": true,
